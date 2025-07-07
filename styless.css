@@ -1,0 +1,50 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: url('natalie-chaney-zhUzdTgtRP8-unsplash.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #4a90e2; /* Stunning blue color */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #555;
+}
+
+strong {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Style for unauthorized access */
+.unauthorized {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 1.5em;
+    margin-top: 50px;
+}

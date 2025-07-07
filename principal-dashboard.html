@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal Dashboard</title>
+    <link rel="stylesheet" href="principal_dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>Principal Dashboard</h1>
+        <a href="logout.php" class="logout-button">Logout</a>
+    </header>
+    <main>
+        <div class="actions">
+            <button id="add-teacher-btn" onclick="showAddTeacherForm()">Add Teacher</button>
+            <!-- Corrected the onclick handler to use JavaScript for redirection -->
+            <button id="view-teachers-btn" onclick="window.location.href='view_teachers.php'">View Teachers</button>
+            <button id="remove-teacher-btn" onclick="showRemoveTeacherForm()">Remove Teacher</button>
+            <button onclick="window.location.href='view_students.php'">View Students</button>
+            <button onclick="window.location.href='view_marksP.php'">View Marks</button>
+            <button onclick="window.location.href='change_password.php'">Change Password</button>
+        </div>
+        <div id="form-container" class="form-container" style="display:none;">
+            <h2>Add Teacher</h2>
+            <form action="add_teacher.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="department">Department:</label>
+                <select id="department" name="department" required>
+                    <option value="ECE">ECE</option>
+                    <option value="CSE">CSE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="MECH">MECH</option>
+                    <option value="CIVIL">CIVIL</option>
+                </select>
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" name="mobile" required>
+                <label for="designation">Designation:</label>
+                <input type="text" id="designation" name="designation" required>
+                <label for="user-id">User ID:</label>
+                <input type="text" id="user-id" name="user-id" required>
+                <button type="submit">Add Teacher</button>
+            </form>
+        </div>
+        <div id="remove-teacher-container" class="form-container" style="display:none;">
+            <h2>Remove Teacher</h2>
+            <form action="remove_teacher.php" method="POST">
+                <label for="remove-id-number">Teacher ID Number:</label>
+                <input type="text" id="remove-id-number" name="id_number" required>
+                <button type="submit">Remove Teacher</button>
+            </form>
+            <div id="remove-teacher-result">
+                <!-- Placeholder for displaying removal results -->
+            </div>
+        </div>
+        <div id="output-container" class="output-container" style="display:none;">
+            <h2>Teachers List</h2>
+            <div id="teachers-list"></div>
+        </div>
+    </main>
+    <script>
+        function showAddTeacherForm() {
+            document.getElementById('form-container').style.display = 'block';
+            document.getElementById('output-container').style.display = 'none';
+            document.getElementById('remove-teacher-container').style.display = 'none';
+        }
+
+        function showRemoveTeacherForm() {
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('output-container').style.display = 'none';
+            document.getElementById('remove-teacher-container').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
